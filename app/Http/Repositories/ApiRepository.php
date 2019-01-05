@@ -14,29 +14,12 @@ class ApiRepository
 		if($req->id){
 			$user=$user->find($req->id);
 		}
-
-		if($req->first_name){
-			$user->fname=$req->first_name;
-		}
-		if($req->last_name){
-			$user->lname=$req->last_name;
-		}
-		if($req->email){	
-			$user->email=$req->email;
-		}
-		if($req->address){
-			$user->address=$req->address;
-		}
-		if($req->age){
-			$user->age=$req->age;
-		}
-		if($req->password){
-			$user->password=Hash::make($req->password);
-		}
-
+		$user->fname=$req->first_name;
+		$user->lname=$req->last_name;
+		$user->country=$req->country;
+		$user->phone=$req->phone;
 		$success=$user->save();
 		return $success;
-
 	}
 
 	public function allData()

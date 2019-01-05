@@ -17,8 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/insert','ApiController@insertOrUpdate');
+Route::post('/insert','ApiController@insert');
 Route::get('/all-data','ApiController@allData');
 Route::get('/one-data/{id}','ApiController@oneData');
-Route::post('/update/{id}','ApiController@insertOrUpdate');
+Route::post('/update/{id}','ApiController@update');
 Route::get('/delete/{id}','ApiController@delete');
